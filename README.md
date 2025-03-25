@@ -19,5 +19,7 @@
 3. **Build web bằng dockerfile với lệnh**
    docker build -t Deploy_WebWeather .
    docker run -p 8080:8080 Deploy_WebWeather
-4. **Truy cập trình duyệt và kiểm tra**
+4. **Run web với lệnh**
+      docker run -p 8080:8080 Deploy_WebWeather
+5. **Truy cập trình duyệt và kiểm tra**
    http://localhost:8080
