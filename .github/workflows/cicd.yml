@@ -63,13 +63,13 @@ jobs:
         # SSH into EC2 and deploy Docker image
         ssh -T -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i vp-keypair.pem ubuntu@$EC2_PUBLIC_IP << 'EOF'
         # Pull Docker image from Docker Hub
-        sudo docker pull ***/deploy_webweather:latest
+        sudo docker pull vnphu18/deploy_webweather:latest
 
         # Stop and remove old container (if any)
-        #sudo docker stop weather-app || true
-        #sudo docker rm weather-app || true
+        sudo docker stop weather-app || true
+        sudo docker rm weather-app || true
 
         # Run new container with the updated image
-        sudo docker run -d --name weather-app -p 80:80 ***/deploy_webweather:latest
+        sudo docker run -d --name weather-app -p 80:80 --rm vnphu18/deploy_webweather:latest
         EOF
 
