@@ -63,9 +63,9 @@ jobs:
           docker pull vnphu18/deploy_webweather:latest
 
           # Stop and remove old container (if any)
-          docker stop weather-app || true
-          docker rm weather-app || true
+          sudo docker stop weather-app || true
+          sudo docker rm weather-app || true
 
           # Run new container with the updated image
-          docker run -d --name weather-app -p 80:80 vnphu18/deploy_webweather:latest
+          sudo docker run -d --name weather-app -p 80:80 vnphu18/deploy_webweather:latest
         EOF
