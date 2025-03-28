@@ -71,5 +71,5 @@ jobs:
 
         # Run new container with the updated image
         sudo docker run -d --name weather-app -p 80:80 ***/deploy_webweather:latest
-EOF
+        EOF
 
