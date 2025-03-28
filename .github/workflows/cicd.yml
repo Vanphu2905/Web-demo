@@ -57,7 +57,7 @@ jobs:
         chmod 600 vp-keypair.pem
         
         # SSH into EC2 and deploy Docker image
-        ssh -o StrictHostKeyChecking=no -i vp-keypair.pem ubuntu@$EC2_PUBLIC_IP << 'EOF'
+        ssh -T -o StrictHostKeyChecking=no -i vp-keypair.pem ubuntu@$EC2_PUBLIC_IP << 'EOF'
           # Pull Docker image from Docker Hub
           docker pull vnphu18/deploy_webweather:latest
 
