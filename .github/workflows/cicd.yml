@@ -60,7 +60,7 @@ jobs:
         ssh -T -o StrictHostKeyChecking=no -i vp-keypair.pem ubuntu@$EC2_PUBLIC_IP << 'EOF'
           # Pull Docker image from Docker Hub
           # Pull Docker image from Docker Hub
-          docker pull vnphu18/deploy_webweather:latest
+          sudo docker pull vnphu18/deploy_webweather:latest
 
           # Stop and remove old container (if any)
           sudo docker stop weather-app || true
