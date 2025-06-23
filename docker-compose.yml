@@ -1,9 +1,7 @@
 services:
   backend:
-    build: ./BE
-    image: web-be
+    image: vnphu18/web-be-jenkins
     container_name: container-web-be
-    
     ports:
       - "5000:5000"
     env_file:
@@ -12,8 +10,7 @@ services:
       - weather_net
 
   frontend:
-    build: ./FE
-    image: web-fe
+    image: vnphu18/web-fe-jenkins
     container_name: container-web-fe
     ports:
       - "8080:80"
@@ -21,5 +18,6 @@ services:
       - backend
     networks:
       - weather_net
+
 networks:
   weather_net:
