@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: ./BE
+    image: web-be
+    container_name: container-web-be
+    
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./BE/.env
+    networks:
+      - weather_net
+
+  frontend:
+    build: ./FE
+    image: web-fe
+    container_name: container-web-fe
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - weather_net
+networks:
+  weather_net:
